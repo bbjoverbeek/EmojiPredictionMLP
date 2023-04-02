@@ -5,14 +5,17 @@ EmojiPrediction project for MLP
 Dataset is from [Hugging Face](https://huggingface.co/datasets/tweet_eval)
 
 ## Running the program
-Create virtual env:
+Create virtual env
 
 `$ python3 -m venv env`
 
 `$ source env/bin/activate`
 
+Install the required packages
+
 `$ python3 -m pip install -r requirements.txt`
 
-Run the program: 
+Clone the BERTTweet repository
 
-`$ python3 main.py`
+`$ git clone https://github.com/VinAIResearch/BERTweet/`
+

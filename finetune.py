@@ -1,5 +1,3 @@
-from TweetNormalizer import normalizeTweet
-# clone bertweet repo into content folder
 import evaluate
 import numpy as np
 from datasets import load_dataset
@@ -15,6 +13,10 @@ from sklearn.metrics import (
     precision_score,
     f1_score
 )
+
+# Clone BERTTweet for this import to work.
+# git clone https://github.com/VinAIResearch/BERTweet/
+from BERTweet.TweetNormalizer import normalizeTweet
 
 evaluate_metric = evaluate.load("accuracy")
 f1_metric = evaluate.load("f1")
