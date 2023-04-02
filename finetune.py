@@ -9,7 +9,6 @@ from transformers import (
     Trainer,
     TrainingArguments
 )
-import torch
 from sklearn.metrics import (
     accuracy_score,
     recall_score,
@@ -59,7 +58,7 @@ def compute_metrics(p):
 
 dataset = dataset.map(tokenize)
 train = dataset["train"].shuffle(seed=seed)
-eval = dataset["validation"].shuffle(seed=seed)
+eval_set = dataset["validation"].shuffle(seed=seed)
 test = dataset["test"].shuffle(seed=seed)
 
 print(train[0:5])
@@ -81,7 +80,7 @@ trainer = Trainer(
     model=model,
     args=training_args,
     train_dataset=train,
-    eval_dataset=eval,
+    eval_dataset=eval_set,
     compute_metrics=compute_metrics,
 )
 
