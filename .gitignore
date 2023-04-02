@@ -131,5 +131,8 @@ test.txt
 
 .idea
 
-# all predictions of the models ran
+# all predictions of the models tested
 predictions/
+
+# the pickle files containing the word embeddings by BERTweet
+data/
