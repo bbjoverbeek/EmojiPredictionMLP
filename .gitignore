@@ -130,3 +130,6 @@ dmypy.json
 test.txt
 
 .idea
+
+# all predictions of the models ran
+predictions/
