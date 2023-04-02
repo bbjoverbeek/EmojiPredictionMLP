@@ -60,9 +60,10 @@ def main(argv):
         f'niter={classifier.n_iter_}_dual={dual}.pickle'
     )
 
-    # create required directorie(s) if not present
+    # create required directorie(s), if not present
     os.makedirs(os.path.dirname('./predictions/'), exist_ok=True)
 
+    # write predictions to file
     with open(f'./predictions/{filename}', 'wb') as outp:
         pickle.dump(predictions, outp)
 

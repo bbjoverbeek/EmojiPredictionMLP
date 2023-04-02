@@ -69,9 +69,10 @@ def main(argv):
         f'activation={activation}.pickle'
     )
 
-    # create required directorie(s)
+    # create required directorie(s), if not present
     os.makedirs(os.path.dirname('./predictions/'), exist_ok=True)
 
+    # write predictions to file
     with open(f'./predictions/{filename}', 'wb') as outp:
         pickle.dump(predictions, outp)
 
