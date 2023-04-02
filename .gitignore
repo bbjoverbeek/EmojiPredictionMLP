@@ -136,3 +136,5 @@ predictions/
 
 # the pickle files containing the word embeddings by BERTweet
 data/
+
+**/.DS_Store
