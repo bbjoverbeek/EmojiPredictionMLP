@@ -1,5 +1,3 @@
-from TweetNormalizer import normalizeTweet
-# clone bertweet repo into content folder
 import evaluate
 import numpy as np
 from datasets import load_dataset
@@ -9,13 +7,16 @@ from transformers import (
     Trainer,
     TrainingArguments
 )
-import torch
 from sklearn.metrics import (
     accuracy_score,
     recall_score,
     precision_score,
     f1_score
 )
+
+# Clone BERTTweet for this import to work.
+# git clone https://github.com/VinAIResearch/BERTweet/
+from BERTweet.TweetNormalizer import normalizeTweet
 
 evaluate_metric = evaluate.load("accuracy")
 f1_metric = evaluate.load("f1")
@@ -59,7 +60,7 @@ def compute_metrics(p):
 
 dataset = dataset.map(tokenize)
 train = dataset["train"].shuffle(seed=seed)
-eval = dataset["validation"].shuffle(seed=seed)
+eval_set = dataset["validation"].shuffle(seed=seed)
 test = dataset["test"].shuffle(seed=seed)
 
 print(train[0:5])
@@ -81,7 +82,7 @@ trainer = Trainer(
     model=model,
     args=training_args,
     train_dataset=train,
-    eval_dataset=eval,
+    eval_dataset=eval_set,
     compute_metrics=compute_metrics,
 )
 
