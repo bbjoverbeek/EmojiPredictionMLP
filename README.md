@@ -20,17 +20,17 @@ Pick a model to train:
 
 1. Extract word embeddings from BERTweet by running [bertweet_embedding_extractor](./bertweet_embedding_extractor.ipynb), preferably on Google Collab, and following its instructions to download the pickle files to the ./data directory.
 
-1. Run [svc.py](./svc.py): $ python3 svc.py data/train_cls.pickle data/test_cls.pickle
+1. Run [svc.py](./svc.py): `$ python3 svc.py data/train_cls.pickle data/test_cls.pickle`
 
 
 ### MLP trained on BERTweet embeddings
 
 1. Extract word embeddings from BERTweet by running [bertweet_embedding_extractor](./bertweet_embedding_extractor.ipynb), preferably on Google Collab, and following its instructions to download the pickle files to the ./data directory.
 
-1. Run [mlp.py](./mlp.py): $ python3 mlp.py data/train_cls.pickle data/test_cls.pickle
+1. Run [mlp.py](./mlp.py): `$ python3 mlp.py data/train_cls.pickle data/test_cls.pickle`
 
 
 ### Fine-tune BERTweet for downstream classification task
 
-1. Run [finetune.py](./finetune.py): $ python3 finetune.py
+1. Run [finetune.py](./finetune.py): `$ python3 finetune.py`
 
