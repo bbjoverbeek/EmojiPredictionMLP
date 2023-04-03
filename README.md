@@ -32,4 +32,5 @@ Pick a model to train:
 
 ### Fine-tune BERTweet for downstream classification task
 
+1. Run [finetune.py](./finetune.py): $ python3 finetune.py
 
