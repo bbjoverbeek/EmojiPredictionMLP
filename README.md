@@ -30,9 +30,11 @@ Pick a model to train:
 1. Run [mlp.py](./mlp.py): `$ python3 mlp.py data/train_cls.pickle data/test_cls.pickle`
 
 _Optimal hyperparameters_  
-To find the optimal hyperparameters for the MLP model we applied Grid Search. The code for this test can be found in [./mlp_gs.py](./mlp_gs.py).
+To find the optimal hyperparameters for the MLP model we applied Grid Search. The code for this test can be found in [./mlp_gs.py](./mlp_gs.py).  
+ **Note that this model took too long to run, so the results are not included in the paper**
 
 
 ### Fine-tune BERTweet for downstream classification task
 
+1. Run [finetune.py](./finetune.py): `$ python3 finetune.py`
 

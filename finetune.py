@@ -69,7 +69,7 @@ model = AutoModelForSequenceClassification \
     .from_pretrained("vinai/bertweet-base", num_labels=20)
 
 training_args = TrainingArguments(
-    output_dir="test_trainer",
+    output_dir="finetune_trainer",
     evaluation_strategy="epoch",
     learning_rate=0.00005,
     per_device_train_batch_size=64,
@@ -77,6 +77,8 @@ training_args = TrainingArguments(
     weight_decay=0,
     num_train_epochs=10
 )
+# settings the settings for the trainer. Most of this are the default settings,
+# however the batch sizes are changed to 64.
 
 trainer = Trainer(
     model=model,
@@ -87,4 +89,4 @@ trainer = Trainer(
 )
 
 trainer.train()
-trainer.save_model("test_trainer")
+trainer.save_model("finetune_trainer_output")
