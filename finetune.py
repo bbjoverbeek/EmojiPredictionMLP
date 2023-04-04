@@ -18,8 +18,7 @@ from sklearn.metrics import (
 # git clone https://github.com/VinAIResearch/BERTweet/
 from BERTweet.TweetNormalizer import normalizeTweet
 
-evaluate_metric = evaluate.load("accuracy")
-f1_metric = evaluate.load("f1")
+
 seed = 45
 dataset = load_dataset("tweet_eval", "emoji")
 tokenizer = AutoTokenizer.from_pretrained("vinai/bertweet-base")
@@ -59,9 +58,9 @@ def compute_metrics(p):
 
 
 dataset = dataset.map(tokenize)
-train = dataset["train"].shuffle(seed=seed)
-eval_set = dataset["validation"].shuffle(seed=seed)
-test = dataset["test"].shuffle(seed=seed)
+train = dataset["train"].shuffle(seed=seed).select(range(100))
+eval_set = dataset["validation"].shuffle(seed=seed).select(range(100))
+test = dataset["test"].shuffle(seed=seed).select(range(100))
 
 print(train[0:5])
 
