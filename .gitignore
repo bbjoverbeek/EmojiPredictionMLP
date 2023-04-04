@@ -139,3 +139,7 @@ data/
 
 **/.DS_Store
 req.txt
+
+finetune_trainer_output
+finetune_trainer
+/BERTweet
