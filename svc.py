@@ -11,7 +11,7 @@ from sklearn.metrics import classification_report
 def main(argv):
     """Runs a Linear SVM on BERTweet context vectors to predict emojis
 
-    Run like this: $ python3 svc.py data/train_cls.picke data/test_cls.pickle
+    Run like this: $ python3 svc.py data/train_cls.pickle data/test_cls.pickle
 
     """
 
